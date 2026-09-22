@@ -15,9 +15,9 @@ function AdminDashboard({ onLogout }) {
   const fetchData = async () => {
     try {
       const [statsRes, empRes, calRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/admin/department-stats'),
-        axios.get('http://localhost:5000/api/admin/employees'),
-        axios.get('http://localhost:5000/api/admin/training-calendar')
+        axios.get('https://kau-shalmitra-o2qbncchz-sih-496e.vercel.app/api/admin/department-stats'),
+        axios.get('https://kau-shalmitra-o2qbncchz-sih-496e.vercel.app/api/admin/employees'),
+        axios.get('https://kau-shalmitra-o2qbncchz-sih-496e.vercel.app/api/admin/training-calendar')
       ]);
       setStats(statsRes.data.stats);
       setEmployees(empRes.data.employees);
