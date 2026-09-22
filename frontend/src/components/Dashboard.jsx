@@ -13,7 +13,7 @@ function Dashboard({ userId, userProfile, setUserProfile, onStartAssessment, onL
 
   const fetchProfile = async () => {
     try {
-      const response = await axios.get(`https://kau-shalmitra-o2qbncchz-sih-496e.vercel.app/api/igot/profile/${userId}`);
+      const response = await axios.get(`https://kau-shalmitra.vercel.app/api/igot/profile/${userId}`);
       setUserProfile(response.data.data);
       setLoading(false);
     } catch (error) {
@@ -24,7 +24,7 @@ function Dashboard({ userId, userProfile, setUserProfile, onStartAssessment, onL
 
   const fetchRecommendations = async () => {
     try {
-      const response = await axios.get(`https://kau-shalmitra-o2qbncchz-sih-496e.vercel.app/api/igot/recommendations/${userId}`);
+      const response = await axios.get(`https://kau-shalmitra.vercel.app/api/igot/recommendations/${userId}`);
       setRecommendations(response.data.recommendedCourses);
     } catch (error) {
       console.error('Error fetching recommendations:', error);

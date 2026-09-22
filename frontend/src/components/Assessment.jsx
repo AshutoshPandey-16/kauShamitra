@@ -16,7 +16,7 @@ function Assessment({ userId, skill, onComplete }) {
 
   const startAssessment = async () => {
     try {
-      const response = await axios.post('https://kau-shalmitra-o2qbncchz-sih-496e.vercel.app/api/assessment/start', {
+      const response = await axios.post('https://kau-shalmitra.vercel.app/api/assessment/start', {
         userId: userId,
         skill: skill
       });
@@ -38,7 +38,7 @@ function Assessment({ userId, skill, onComplete }) {
     }
 
     try {
-      const response = await axios.post('https://kau-shalmitra-o2qbncchz-sih-496e.vercel.app/api/assessment/submit-answer', {
+      const response = await axios.post('https://kau-shalmitra.vercel.app/api/assessment/submit-answer', {
         sessionId: sessionId,
         questionId: currentQuestion.questionId,
         selectedOption: selectedOption
