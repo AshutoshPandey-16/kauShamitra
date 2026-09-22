@@ -453,9 +453,17 @@ app.get('/api/admin/training-calendar', async (req, res) => {
 // ========================================
 // START SERVER
 // ========================================
-app.listen(PORT, () => {
+// ========================================
+// START SERVER (Local development)
+// ========================================
+if (require.main === module) {
+  app.listen(PORT, () => {
     console.log(`🚀 Mock iGOT API running on http://localhost:${PORT}`);
     console.log(`📋 Test URLs:`);
     console.log(`   - Profile: http://localhost:${PORT}/api/igot/profile/EMP1001`);
     console.log(`   - Recommendations: http://localhost:${PORT}/api/igot/recommendations/EMP1001`);
-});
+  });
+}
+
+// Vercel serverless export (DEPLOYMENT KE LIYE ZAROORI)
+module.exports = app;
