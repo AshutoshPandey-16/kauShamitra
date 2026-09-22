@@ -8,7 +8,7 @@ const app = express();
 app.use(cors()); // Frontend se connect karne ke liye
 app.use(express.json()); // JSON body parse karne ke liye
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Helper: Network delay simulate karo (real API jaisa feel)
 const simulateDelay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
